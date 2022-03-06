@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>SampleDB</title>
+</head>
+<body>
+        <head>
+        </head>
+        <div class="container">
+            <h2><%= title %></h2>
+            <a href="/add" class="btn btn-sm btn-primary"> Add User</a><br/><br>
+                <table  class="table table-dark table-striped">
+                    <thead>                 
+                      <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                    <th>AGE</th> 
+                    <th>DEPARTMENT</th>              
+                    </tr>
+                </thead> 
+                        <tbody>
+                            <% user.forEach(function(user){ %>
+                                <tr>
+                                    <td><%= user.ID %></td>
+                                    <td><%= user.NAME %></td>
+                                    <td><%= user.AGE %></td>
+                                    <td><%= user.DEPARTMENT %></td>
+                                    <td>
+                                         <a href="edit/<%= user.id %>" class="btn btn-sm btn-primary"> Edit</a>
+                                        <a href="delete/<%= user.id %>" class="btn btn-sm btn-danger"> Delete</a>
+                                    </td>
+                                </tr>
+                            <%}); %>
+                        </tbody>
+                </table>
+
+        </div>
+</body>
+</html>
